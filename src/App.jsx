@@ -8,8 +8,8 @@ import ForgetPassword from "./pages/auth/operations/ForgetPassword";
 // Dashboard
 import Home from "./pages/home/Home";
 import Dashboard from "./pages/dashboard/Dashboard";
-import UsersProfiles from "./pages/users/usersProfiles/UsersProfiles";
-import HRT from "./pages/users/hrt/HRT";
+import UsersProfiles from "./pages/users/UsersProfiles";
+import HRT from "./pages/users/HRT";
 
 const App = () => {
   return (

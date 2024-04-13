@@ -4,7 +4,7 @@ import Topbar from "../../components/dashboard/topbar/Topbar";
 export default function Dashboard() {
   return (
     <div>
-      <Topbar />
+      <Topbar title="Dashboard" />
       <DashContent />
     </div>
   );

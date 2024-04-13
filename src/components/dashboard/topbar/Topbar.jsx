@@ -1,9 +1,10 @@
 import "./style.css";
+import PropTypes from "prop-types";
 
-function Topbar() {
+export default function Topbar({ title }) {
   return (
     <div className="topbar">
-      <p>Dashboard</p>
+      <p>{title}</p>
       <div className="search">
         <input type="text" placeholder="Search anything here..." />
         <svg
@@ -30,4 +31,6 @@ function Topbar() {
   );
 }
 
-export default Topbar;
+Topbar.propTypes = {
+  title: PropTypes.string.isRequired,
+};
