@@ -27,7 +27,7 @@ export default function Login() {
                             <img src={facebook} alt="facebook image" />
                             Sign in with Facebook
                         </div>
-                        <p className='text-center'>Don't have an account? <span>Sign in</span></p>
+                        <p className='text-center'>Don&apos;t have an account? <span>Sign in</span></p>
                     </div>
                 </div>
                 <div className="image-cover">

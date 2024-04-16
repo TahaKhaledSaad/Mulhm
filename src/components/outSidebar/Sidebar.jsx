@@ -9,6 +9,7 @@ import "./style.css";
 export default function Sidebar() {
   // States
   const [openUsers, setOpenUsers] = useState(false);
+  const [openService, setOpenService] = useState(false);
 
   return (
     <div className="sidebar m-0">
@@ -131,26 +132,79 @@ export default function Sidebar() {
           </div>
         )}
 
-        <NavLink to="service" className="link d-flex gap-2">
+        <NavLink
+          to="service"
+          className="users d-flex justify-content-between"
+          onClick={() => setOpenService(!openService)}
+        >
+          <div className="d-flex gap-2">
+            <svg
+              className="service-list"
+              width="25"
+              height="24"
+              viewBox="0 0 25 24"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M17.1667 2H7.83333C4.42889 2 2.5 3.92889 2.5 7.33333V16.6667C2.5 20.0622 4.42 22 7.83333 22H17.1667C20.5711 22 22.5 20.0622 22.5 16.6667V7.33333C22.5 3.92889 20.5711 2 17.1667 2Z"
+                fill="#C7C7C7"
+              />
+              <path
+                d="M15.8205 12.7083H13.2495V15.257C13.2495 15.6673 12.9139 16 12.5 16C12.0861 16 11.7505 15.6673 11.7505 15.257V12.7083H9.17955C8.79342 12.6687 8.5 12.3461 8.5 11.9613C8.5 11.5765 8.79342 11.2539 9.17955 11.2143H11.7424V8.67365C11.7824 8.29088 12.1078 8 12.496 8C12.8842 8 13.2095 8.29088 13.2495 8.67365V11.2143H15.8205C16.2066 11.2539 16.5 11.5765 16.5 11.9613C16.5 12.3461 16.2066 12.6687 15.8205 12.7083Z"
+                fill="#fff"
+              />
+            </svg>
+            <p>Services</p>
+          </div>
           <svg
-            width="25"
-            height="24"
-            viewBox="0 0 25 24"
-            fill="none"
             xmlns="http://www.w3.org/2000/svg"
+            width="24"
+            height="24"
+            viewBox="0 0 24 24"
+            fill="none"
+            style={{
+              transform: openService ? "rotate(90deg)" : "rotate(0deg)",
+            }}
           >
             <path
-              opacity="0.4"
-              d="M17.1667 2H7.83333C4.42889 2 2.5 3.92889 2.5 7.33333V16.6667C2.5 20.0622 4.42 22 7.83333 22H17.1667C20.5711 22 22.5 20.0622 22.5 16.6667V7.33333C22.5 3.92889 20.5711 2 17.1667 2Z"
-              fill="#C7C7C7"
-            />
-            <path
-              d="M15.8205 12.7083H13.2495V15.257C13.2495 15.6673 12.9139 16 12.5 16C12.0861 16 11.7505 15.6673 11.7505 15.257V12.7083H9.17955C8.79342 12.6687 8.5 12.3461 8.5 11.9613C8.5 11.5765 8.79342 11.2539 9.17955 11.2143H11.7424V8.67365C11.7824 8.29088 12.1078 8 12.496 8C12.8842 8 13.2095 8.29088 13.2495 8.67365V11.2143H15.8205C16.2066 11.2539 16.5 11.5765 16.5 11.9613C16.5 12.3461 16.2066 12.6687 15.8205 12.7083Z"
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M13.5858 12L9.29289 16.2929C8.90237 16.6834 8.90237 17.3166 9.29289 17.7071C9.68342 18.0976 10.3166 18.0976 10.7071 17.7071L15.7071 12.7071C16.0976 12.3166 16.0976 11.6834 15.7071 11.2929L10.7071 6.29289C10.3166 5.90237 9.68342 5.90237 9.29289 6.29289C8.90237 6.68342 8.90237 7.31658 9.29289 7.70711L13.5858 12Z"
               fill="#C7C7C7"
             />
           </svg>
-          <p>Service</p>
         </NavLink>
+
+        {openService && (
+          <div className="p-3 py-0">
+            <NavLink to="service/service-list" className="link d-flex gap-2">
+              <svg
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12.5" cy="11.9873" r="5" fill="#C7C7C7" />
+              </svg>
+
+              <p>Services List</p>
+            </NavLink>
+            <NavLink to="service/calender" className="link d-flex gap-2">
+              <svg
+                width="25"
+                height="24"
+                viewBox="0 0 25 24"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <circle cx="12.5" cy="11.9873" r="5" fill="#C7C7C7" />
+              </svg>
+              <p>Calender</p>
+            </NavLink>
+          </div>
+        )}
 
         <NavLink to="chat" className="link d-flex gap-2">
           <svg

@@ -1,3 +1,4 @@
+import { useState } from "react";
 import DataTable from "react-data-table-component";
 
 import Topbar from "../../components/dashboard/topbar/Topbar";
@@ -5,9 +6,12 @@ import Topbar from "../../components/dashboard/topbar/Topbar";
 import avatar from "./../../assets/avatar.png";
 
 import "./style.css";
+import { Link } from "react-router-dom";
 
 export default function HRT() {
   //
+  const [statusFilter, setStatusFilter] = useState("");
+
   const columns = [
     {
       name: "Name",
@@ -42,16 +46,33 @@ export default function HRT() {
           className={`status ${
             row.status === "Finish"
               ? "finish"
-              : row.status === "On progress"
+              : row.status === "In progress"
+              ? "in-progress"
+              : row.status === "Cancel"
+              ? "cancel"
+              : row.status === "Pending"
               ? "pending"
-              : "cancel"
+              : row.status === "Upcoming"
+              ? "upcoming"
+              : "pre-cancelled"
           }`}
         >
           {row.status}
         </span>
       ),
+      filter:
+        statusFilter === ""
+          ? null
+          : (rows, filterValue) =>
+              rows.filter((row) =>
+                row.status.toLowerCase().includes(filterValue.toLowerCase())
+              ),
     },
   ];
+
+  const handleFilterClick = (status) => {
+    setStatusFilter(status);
+  };
 
   const data = [
     {
@@ -65,7 +86,7 @@ export default function HRT() {
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
       startLocation: "Al Munsiyah, Riyadh 13246",
-      status: "On progress",
+      status: "In progress",
     },
     {
       id: 2,
@@ -130,7 +151,7 @@ export default function HRT() {
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
       startLocation: "Al Munsiyah, Riyadh 13246",
-      status: "On progress",
+      status: "In progress",
     },
     {
       id: 7,
@@ -143,7 +164,7 @@ export default function HRT() {
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
       startLocation: "Al Munsiyah, Riyadh 13246",
-      status: "On progress",
+      status: "In progress",
     },
     {
       id: 8,
@@ -210,36 +231,86 @@ export default function HRT() {
       startLocation: "Al Munsiyah, Riyadh 13246",
       status: "Finish",
     },
+    {
+      id: 13,
+      name: "Mary Doe",
+      totalOrders: 15,
+      location: "Kampala, Uganda",
+      phone: "+256 123 456 7890",
+      action: "Edit",
+      image: avatar,
+      type: "Repairing",
+      orderedType: "04.12.2021 20:24",
+      startLocation: "Al Munsiyah, Riyadh 13246",
+      status: "Pending",
+    },
+    {
+      id: 14,
+      name: "Mary Doe",
+      totalOrders: 15,
+      location: "Kampala, Uganda",
+      phone: "+256 123 456 7890",
+      action: "Edit",
+      image: avatar,
+      type: "Repairing",
+      orderedType: "04.12.2021 20:24",
+      startLocation: "Al Munsiyah, Riyadh 13246",
+      status: "Upcoming",
+    },
+    {
+      id: 15,
+      name: "Mary Doe",
+      totalOrders: 15,
+      location: "Kampala, Uganda",
+      phone: "+256 123 456 7890",
+      action: "Edit",
+      image: avatar,
+      type: "Repairing",
+      orderedType: "04.12.2021 20:24",
+      startLocation: "Al Munsiyah, Riyadh 13246",
+      status: "Pending",
+    },
   ];
 
   return (
     <div className="user-profiles">
       <div className="header">
         <Topbar title="Users/Workers" />
-        <button>
-          <svg
-            width="12"
-            height="13"
-            viewBox="0 0 12 13"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M11.7831 7.836H6.94706V12.936H5.03906V7.836H0.227063V6.06H5.03906V0.983999H6.94706V6.06H11.7831V7.836Z"
-              fill="white"
-            />
-          </svg>
-          <span>Create New</span>
-        </button>
+        <Link to="/users/add-user">
+          <button>
+            <svg
+              width="12"
+              height="13"
+              viewBox="0 0 12 13"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M11.7831 7.836H6.94706V12.936H5.03906V7.836H0.227063V6.06H5.03906V0.983999H6.94706V6.06H11.7831V7.836Z"
+                fill="white"
+              />
+            </svg>
+            <span>Create New</span>
+          </button>
+        </Link>
       </div>
 
       <div className="table-container">
         <div className="d-flex justify-content-between mb-1">
-          <div className="topbar-filter">
-            <span className="topbar-status">Pending (5)</span>
+          <div
+            className="topbar-filter"
+            onClick={() => handleFilterClick("Pending")}
+          >
+            <span className="topbar-status">
+              Pending ({data.filter((item) => item.status === "Pending").length}
+              )
+            </span>
           </div>
 
-          <div className="topbar-filter d-flex align-items-center gap-2">
+          <div
+            className="topbar-filter d-flex align-items-center gap-2"
+            onClick={() => handleFilterClick("In progress")}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -254,10 +325,16 @@ export default function HRT() {
                 fill="#345995"
               />
             </svg>
-            <span className="topbar-status">In progress (1)</span>
+            <span className="topbar-status">
+              In progress (
+              {data.filter((item) => item.status === "In progress").length})
+            </span>
           </div>
 
-          <div className="topbar-filter d-flex align-items-center gap-2">
+          <div
+            className="topbar-filter d-flex align-items-center gap-2"
+            onClick={() => handleFilterClick("Finish")}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -272,10 +349,16 @@ export default function HRT() {
                 fill="#345995"
               />
             </svg>
-            <span className="topbar-status">Completed (70)</span>
+            <span className="topbar-status">
+              Completed (
+              {data.filter((item) => item.status === "Finish").length})
+            </span>
           </div>
 
-          <div className="topbar-filter d-flex align-items-center gap-2">
+          <div
+            className="topbar-filter d-flex align-items-center gap-2"
+            onClick={() => handleFilterClick("Upcoming")}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -290,10 +373,16 @@ export default function HRT() {
                 fill="#345995"
               />
             </svg>
-            <span className="topbar-status">Upcoming (0)</span>
+            <span className="topbar-status">
+              Upcoming (
+              {data.filter((item) => item.status === "Upcoming").length})
+            </span>
           </div>
 
-          <div className="topbar-filter d-flex align-items-center gap-2">
+          <div
+            className="topbar-filter d-flex align-items-center gap-2"
+            onClick={() => handleFilterClick("Cancel")}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -308,10 +397,16 @@ export default function HRT() {
                 fill="#345995"
               />
             </svg>
-            <span className="topbar-status">Pre cancelled (26)</span>
+            <span className="topbar-status">
+              Pre cancelled (
+              {data.filter((item) => item.status === "Cancel").length})
+            </span>
           </div>
 
-          <div className="topbar-filter d-flex align-items-center gap-2">
+          <div
+            className="topbar-filter d-flex align-items-center gap-2"
+            onClick={() => handleFilterClick("Cancelled by driver")}
+          >
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="24"
@@ -326,16 +421,28 @@ export default function HRT() {
                 fill="#345995"
               />
             </svg>
-            <span className="topbar-status">Cancelled by driver (1)</span>
+            <span className="topbar-status">
+              Cancelled by driver (
+              {
+                data.filter((item) => item.status === "Cancelled by driver")
+                  .length
+              }
+              )
+            </span>
           </div>
         </div>
         <hr />
         <DataTable
           columns={columns}
-          data={data}
+          data={
+            statusFilter === ""
+              ? data
+              : data.filter((d) => d.status === statusFilter)
+          }
           pagination
           highlightOnHover
           // fixedHeader
+          onFilter={(e) => setStatusFilter(e.target.value)}
         />
       </div>
     </div>

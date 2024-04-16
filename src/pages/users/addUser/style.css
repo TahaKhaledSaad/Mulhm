@@ -1,0 +1,153 @@
+.new-user {
+  flex-grow: 999;
+  padding-right: 20px;
+}
+
+.new-user .compelete-status,
+.new-user .user-info {
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+  margin-top: 30px;
+}
+
+.new-user .compelete-status {
+  display: flex;
+  justify-content: space-around;
+  padding: 30px 0;
+  align-items: center;
+}
+
+.new-user .compelete-status .elem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 2;
+  justify-content: center;
+  padding: 0;
+}
+
+.new-user .compelete-status .elem .checked-icon {
+  background-color: #345995;
+  width: fit-content;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2px;
+}
+
+.new-user .compelete-status .elem p {
+  color: var(--Type-Light, #89868d);
+  font-family: Urbanist;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+  margin-top: 10px;
+}
+
+.new-user .compelete-status .line {
+  background-color: #c0ccde;
+  height: 2px;
+  width: 68%;
+  position: absolute;
+  top: 37%;
+}
+
+/* User Info */
+
+.user-info {
+  position: relative;
+}
+
+.user-info .heading {
+  color: #3a3541;
+  font-family: Lato;
+  font-size: 22.78px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.user-info .desc {
+  color: #89868d;
+  font-family: Urbanist;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+
+.user-info .user-details {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 365px;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.user-info .input-elem {
+ flex-grow: 5;
+}
+
+.user-info .input-elem input {
+  display: flex;
+  width: 330px;
+  height: 46px;
+  padding: 5px 10px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 1px solid #dbdcde;
+  background: #f4f5f9;
+  color: #89868d;
+  font-family: Lato;
+  font-size: 14.22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.user-info .input-elem input:focus {
+  outline: none;
+  border-color: #345995;
+}
+
+.user-info .input-elem label {
+  color: #3a3541;
+  font-family: Lato;
+  font-size: 14.22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+
+.user-info button {
+  display: flex;
+  width: 100px;
+  height: 32px;
+  padding: 8px 0px 9px 0px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #345995;
+  color: #fff;
+  border: none;
+  font-family: Lato;
+  position: absolute;
+  bottom: 20px;
+  right: 55px;
+}
+
+.user-info button:focus {
+  outline: none;
+}
