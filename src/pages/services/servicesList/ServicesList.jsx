@@ -17,11 +17,10 @@ import category8 from "./../../../assets/category8.svg";
 import category9 from "./../../../assets/category9.svg";
 
 import "./style.css";
-import { Link } from "react-router-dom";
 
 export default function ServicesList() {
   //
-  const [showEdit, setShowEdit] = useState(false);
+  const [showNewService, setShowNewService] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
   //
@@ -51,14 +50,7 @@ export default function ServicesList() {
       name: "Action",
       cell: (row) => (
         <div className="action-icons d-flex gap-3">
-          <img
-            src={edit}
-            alt="Edit User"
-            onClick={() => {
-              setShowEdit(true);
-              console.log(row.id);
-            }}
-          />
+          <img src={edit} alt="Edit User" />
           <img
             src={del}
             alt="Delete User"
@@ -187,23 +179,22 @@ export default function ServicesList() {
     <div className="user-profiles">
       <div className="header">
         <Topbar title="Service List" />
-        <Link to="/users/add-user">
-          <button>
-            <svg
-              width="12"
-              height="13"
-              viewBox="0 0 12 13"
-              fill="none"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                d="M11.7831 7.836H6.94706V12.936H5.03906V7.836H0.227063V6.06H5.03906V0.983999H6.94706V6.06H11.7831V7.836Z"
-                fill="white"
-              />
-            </svg>
-            <span>Add New</span>
-          </button>
-        </Link>
+
+        <button onClick={() => setShowNewService(true)}>
+          <svg
+            width="12"
+            height="13"
+            viewBox="0 0 12 13"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.7831 7.836H6.94706V12.936H5.03906V7.836H0.227063V6.06H5.03906V0.983999H6.94706V6.06H11.7831V7.836Z"
+              fill="white"
+            />
+          </svg>
+          <span>Add New</span>
+        </button>
       </div>
 
       <div className="table-container">
@@ -216,7 +207,7 @@ export default function ServicesList() {
         />
       </div>
 
-      {showEdit && (
+      {showNewService && (
         <div className="editing">
           <div className="editing-container">
             <p className="heading">Service Information</p>
@@ -361,7 +352,7 @@ export default function ServicesList() {
             <div className="btns">
               <button
                 onClick={() => {
-                  setShowEdit(false);
+                  setShowNewService(false);
                 }}
               >
                 Cancel
@@ -391,38 +382,11 @@ export default function ServicesList() {
             </p>
 
             <div className="btns">
-              <button>No, Keep it.</button>
-              <button
-                onClick={() => {
-                  setShowDelete(false);
-                }}
-              >
-                Yes, Delete it.{" "}
+              <button onClick={() => setShowDelete(false)}>No, Keep it.</button>
+              <button onClick={() => setShowDelete(false)}>
+                Yes, Delete it.
               </button>
             </div>
-
-            <span
-              className="hide-delete"
-              onClick={() => {
-                setShowDelete(false);
-                setShowEdit(true);
-              }}
-            >
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 12 12"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  fillRule="evenodd"
-                  clipRule="evenodd"
-                  d="M11.1015 1.32232C11.3944 1.02943 11.3944 0.554555 11.1015 0.261662C10.8086 -0.0312311 10.3337 -0.0312311 10.0408 0.261662L5.68109 4.6214L1.32135 0.261662C1.02845 -0.0312311 0.553579 -0.0312311 0.260686 0.261662C-0.0322077 0.554555 -0.0322077 1.02943 0.260686 1.32232L4.62043 5.68206L0.260686 10.0418C-0.0322077 10.3347 -0.0322077 10.8096 0.260686 11.1025C0.553579 11.3954 1.02845 11.3954 1.32135 11.1025L5.68109 6.74272L10.0408 11.1025C10.3337 11.3954 10.8086 11.3954 11.1015 11.1025C11.3944 10.8096 11.3944 10.3347 11.1015 10.0418L6.74175 5.68206L11.1015 1.32232Z"
-                  fill="#191E3A"
-                />
-              </svg>
-            </span>
           </div>
         </div>
       )}

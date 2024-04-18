@@ -358,14 +358,14 @@
   margin-top: 30px;
 }
 
-.editing .editing-container .btns button {
+.editing .editing-container .btns button.button-action {
   display: inline-flex;
   padding: 15px 37px 14px 37px;
   justify-content: flex-start;
   align-items: center;
   border-radius: 4px;
-  background: #345995;
-  color: #fff;
+  background: #345995 !important;
+  color: #fff !important;
   font-family: Lato;
   font-size: 14px;
   font-style: normal;
@@ -383,14 +383,16 @@
 .editing .editing-container .btns button img,
 .editing .editing-container .btns button svg {
   margin: 0;
+  width: 20px;
+  height: 20px;
 }
 
 .editing .editing-container .btns button:nth-child(2) {
-  background: #6fb07f;
+  background: #6fb07f !important;
 }
 
 .editing .editing-container .btns button:nth-child(3) {
-  background: #f75555;
+  background: #f75555 !important;
 }
 
 .editing .editing-container .hide-profile {
