@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { NavLink } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 import logo from "./../../assets/logo.svg";
 import avatar from "./../../assets/avatar.png";
@@ -42,10 +42,14 @@ export default function Sidebar() {
           <p>Dashboard</p>
         </NavLink>
 
-        <NavLink
-          to="users"
-          className="users d-flex justify-content-between"
-          onClick={() => setOpenUsers(!openUsers)}
+        <div
+          className={`users d-flex justify-content-between ${
+            openUsers && !openService && "active"
+          }`}
+          onClick={() => {
+            setOpenUsers(!openUsers);
+            setOpenService(false);
+          }}
         >
           <div className="d-flex gap-2">
             <svg
@@ -100,7 +104,7 @@ export default function Sidebar() {
               fill="#C7C7C7"
             />
           </svg>
-        </NavLink>
+        </div>
 
         {openUsers && (
           <div className="p-3 py-0">
@@ -132,10 +136,14 @@ export default function Sidebar() {
           </div>
         )}
 
-        <NavLink
-          to="service"
-          className="users d-flex justify-content-between"
-          onClick={() => setOpenService(!openService)}
+        <div
+          className={`users d-flex justify-content-between ${
+            !openUsers && openService && "active"
+          }`}
+          onClick={() => {
+            setOpenService(!openService);
+            setOpenUsers(false);
+          }}
         >
           <div className="d-flex gap-2">
             <svg
@@ -174,7 +182,7 @@ export default function Sidebar() {
               fill="#C7C7C7"
             />
           </svg>
-        </NavLink>
+        </div>
 
         {openService && (
           <div className="p-3 py-0">
@@ -303,20 +311,22 @@ export default function Sidebar() {
           <p>Mulhm</p>
           <p>tahakhsaad55@gmail.com</p>
         </div>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="14"
-          height="14"
-          viewBox="0 0 14 14"
-          fill="none"
-        >
-          <path
-            fillRule="evenodd"
-            clipRule="evenodd"
-            d="M7 9.62207C7.7245 9.62207 8.3125 10.2101 8.3125 10.9346C8.3125 11.6591 7.7245 12.2471 7 12.2471C6.2755 12.2471 5.6875 11.6591 5.6875 10.9346C5.6875 10.2101 6.2755 9.62207 7 9.62207ZM7 5.68457C7.7245 5.68457 8.3125 6.27257 8.3125 6.99707C8.3125 7.72157 7.7245 8.30957 7 8.30957C6.2755 8.30957 5.6875 7.72157 5.6875 6.99707C5.6875 6.27257 6.2755 5.68457 7 5.68457ZM7 1.74707C7.7245 1.74707 8.3125 2.33507 8.3125 3.05957C8.3125 3.78407 7.7245 4.37207 7 4.37207C6.2755 4.37207 5.6875 3.78407 5.6875 3.05957C5.6875 2.33507 6.2755 1.74707 7 1.74707Z"
-            fill="white"
-          />
-        </svg>
+        <Link to="/account">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="14"
+            height="14"
+            viewBox="0 0 14 14"
+            fill="none"
+          >
+            <path
+              fillRule="evenodd"
+              clipRule="evenodd"
+              d="M7 9.62207C7.7245 9.62207 8.3125 10.2101 8.3125 10.9346C8.3125 11.6591 7.7245 12.2471 7 12.2471C6.2755 12.2471 5.6875 11.6591 5.6875 10.9346C5.6875 10.2101 6.2755 9.62207 7 9.62207ZM7 5.68457C7.7245 5.68457 8.3125 6.27257 8.3125 6.99707C8.3125 7.72157 7.7245 8.30957 7 8.30957C6.2755 8.30957 5.6875 7.72157 5.6875 6.99707C5.6875 6.27257 6.2755 5.68457 7 5.68457ZM7 1.74707C7.7245 1.74707 8.3125 2.33507 8.3125 3.05957C8.3125 3.78407 7.7245 4.37207 7 4.37207C6.2755 4.37207 5.6875 3.78407 5.6875 3.05957C5.6875 2.33507 6.2755 1.74707 7 1.74707Z"
+              fill="white"
+            />
+          </svg>
+        </Link>
       </div>
     </div>
   );

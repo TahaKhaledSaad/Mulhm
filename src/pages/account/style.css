@@ -1,0 +1,359 @@
+.new-user {
+  flex-grow: 999;
+  padding-right: 20px;
+}
+
+/* User Info */
+
+.user-info {
+  position: relative;
+}
+
+.flex-container {
+  flex-grow: 999;
+}
+
+.user-info .heading {
+  color: #3a3541;
+  font-family: Lato;
+  font-size: 22.78px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.user-info .desc {
+  color: #89868d;
+  font-family: Urbanist;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+
+.user-info .user-details {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: 1fr 365px;
+  margin-bottom: 20px;
+  gap: 20px;
+}
+
+.user-info .input-elem {
+  flex-grow: 5;
+}
+
+.user-info .input-elem input {
+  display: flex;
+  width: 330px;
+  height: 46px;
+  padding: 5px 10px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 1px solid #dbdcde;
+  background: #f4f5f9;
+  color: #89868d;
+  font-family: Lato;
+  font-size: 14.22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.user-info .input-elem input:focus {
+  outline: none;
+  border-color: #345995;
+}
+
+.user-info .input-elem label {
+  color: #3a3541;
+  font-family: Lato;
+  font-size: 14.22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-bottom: 10px;
+}
+
+.user-info button {
+  display: flex;
+  width: 100px;
+  height: 32px;
+  padding: 8px 0px 9px 0px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #345995;
+  color: #fff;
+  border: none;
+  font-family: Lato;
+  position: absolute;
+  bottom: 20px;
+  right: 55px;
+}
+
+.user-info button:focus {
+  outline: none;
+}
+
+.pass-rules {
+  display: inline-flex;
+  padding: 20px;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 19px;
+  border-radius: 8px;
+  background: #f4f5f9;
+  width: calc(100% - 30px);
+}
+
+.pass-rules p.heading {
+  color: #3a3541;
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+}
+
+.pass-rules p.desc {
+  color: #89868d;
+  font-family: Lato;
+  font-size: 12.64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.pass-rules li {
+  color: #89868d;
+  font-family: Lato;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 19px;
+}
+
+.main-heading {
+  color: #3a3541;
+  font-family: Lato;
+  font-size: 25.63px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 16px;
+  margin-top: 20px;
+}
+
+.main-desc {
+  color: #89868d;
+  font-family: Lato;
+  font-size: 14.22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.cancel-btn,
+.save-btn {
+  display: flex;
+  width: 100px;
+  height: 32px;
+  padding: 8px 31px 9px 31px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 4px;
+  background: #fff;
+  border: none;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+  color: #3a3541;
+  text-align: center;
+  font-family: Lato;
+  font-size: 12.64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.save-btn {
+  background: #345995;
+  color: #fff;
+  margin-left: 10px;
+}
+
+.cancel-btn:focus,
+.save-btn:focus {
+  outline: none;
+}
+
+.user-info .user-profile img {
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  margin: 0;
+}
+
+.user-info .user-profile div p:first-child {
+  color: #3a3541;
+  font-family: Lato;
+  font-size: 12.64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.user-info .user-profile div p:last-child {
+  color: #727272;
+  font-family: Lato;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.user-info .user-profile div p:last-child span:first-child {
+  margin-right: 10px;
+}
+
+.user-info .upload-photo {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 209px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border: 1px dashed #345995;
+  border-radius: 8px;
+  margin-top: 15px;
+  cursor: pointer;
+}
+
+.user-info .upload-photo svg {
+  margin-bottom: 30px;
+}
+
+.user-info .upload-photo p {
+  color: #345995;
+  text-align: center;
+  font-family: Lato;
+  font-size: 12.64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.user-info .upload-photo p span {
+  color: #3a3541;
+}
+
+.user-info .upload-photo p:nth-child(3) {
+  color: #3a3541;
+}
+
+.user-info .upload-photo p:nth-child(4) {
+  color: #89868d;
+}
+
+.user-info .google img {
+  width: 60px;
+  height: 19px;
+  margin: 0;
+}
+
+.user-info .google .connected {
+  background-color: #ebeef4;
+  color: #345995;
+  text-align: center;
+  font-family: Lato;
+  font-size: 12.64px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+  padding: 5px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+}
+
+.user-info .google-desc {
+  color: var(--Type-Light, #89868d);
+  font-family: Lato;
+  font-size: 14.22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 10px;
+}
+
+.user-info .google-desc span {
+  color: #345995;
+}
+
+.sign-out {
+  color: var(--Surface-White, #fff);
+  text-align: center;
+  display: flex;
+  width: 177px;
+  height: 32px;
+  padding: 8px 20px 9px 22px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  font-family: Lato;
+  font-size: 12.64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  border-radius: 4px;
+  background: var(--Primary-Color, #345995);
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+.phone-elem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.phone-elem div p:first-child {
+  color: var(--Type-Dark, #3a3541);
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.phone-elem div p:last-child {
+  color: var(--Type-Light, #89868d);
+  font-family: Lato;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}

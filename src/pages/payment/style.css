@@ -36,6 +36,9 @@
   line-height: normal;
 }
 
+.pdf-img {
+}
+
 /* ---- Table Style ---- */
 
 .table-container {
@@ -88,57 +91,192 @@
   letter-spacing: 0.1px;
 }
 
-.status {
+.pdf-img {
+  width: 30px;
+  height: 30px;
+  margin: 0;
+}
+
+button.download,
+button.download-all {
   display: flex;
+  width: 100px;
+  height: 32px;
+  padding: 9px;
   justify-content: center;
   align-items: center;
-  width: 85px;
-  height: 18px;
   flex-shrink: 0;
-  border-radius: 9px;
+  border-radius: 4px;
+  background: #3a3541;
+  color: #fff;
+  border: none;
+}
+
+button.download-all {
+  background: #345995;
+  padding: 0;
+  width: 120px;
+}
+
+button.download:focus,
+button.download-all:focus {
+  outline: none;
+}
+
+.billing-history p.heading,
+.payment-method p.heading {
+  color: #3a3541;
+  font-family: Lato;
+  font-size: 25.63px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 5px;
+}
+
+.billing-history p.desc,
+.payment-method p.desc {
+  color: #89868d;
+  font-family: Lato;
+  font-size: 14.22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.payment-method,
+.payment-amount {
+  background-color: #fff;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+  border-radius: 8px;
+  padding: 20px;
+  position: relative;
+}
+
+.payment-info {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.payment-box {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  margin: 20px 0;
+  margin-bottom: 5px;
+  padding: 21px 20px 22px 20px;
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+}
+
+.payment-box img {
+  width: 50px;
+  margin: 0;
+}
+
+.payment-box div p:first-child {
+  color: #3a3541;
+  font-family: Lato;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  margin: 0;
+  margin-bottom: 10px;
+}
+
+.payment-box div p:last-child {
+  color: #89868d;
+  font-family: Lato;
+  font-size: 12.64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin: 0;
+}
+
+.payment-box button {
+  display: flex;
+  width: 100px;
+  height: 32px;
+  padding: 8px 0px 9px 0px;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  border: 1px solid var(--Primary-Color, #345995);
+  background: #ebeef4;
+  color: #345995;
   text-align: center;
-  font-family: Poppins;
-  font-size: 9px;
+  font-family: Lato;
+  font-size: 12.64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+.payment-amount {
+  position: relative;
+}
+
+.payment-amount p.heading {
+  color: var(--Type-Dark, #3a3541);
+  font-family: Lato;
+  font-size: 20.25px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
 }
 
-.finish {
-  background: rgba(36, 193, 143, 0.1);
-  color: #24c18f;
+.payment-amount .amount {
+  color: #345995;
+  font-family: Lato;
+  font-size: 58px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
-.in-progress {
-  background: rgba(241, 143, 1, 0.1);
-  color: #f18f01;
+.payment-amount .amount span {
+  font-size: 32px;
 }
 
-.cancel {
-  background: rgba(247, 85, 85, 0.1);
+.payment-amount .vat {
+  color: #505050;
+  font-family: Lato;
+  font-size: 20.25px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.payment-amount .vat span:nth-child(2) {
   color: #f75555;
 }
 
-.pending {
-  background: #e2f4c58c;
-  color: #496989;
+.payment-amount .vat span:nth-child(3) {
+  font-size: 12px;
 }
 
-.upcoming {
-  background: #ace2e162;
-  color: #008dda;
-}
-
-.topbar-status {
-  color: #101010;
-  font-family: Urbanist;
+.payment-amount .withdraw {
+  display: flex;
+  width: 210px;
+  padding: 15px 26px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  border-radius: 8px;
+  background: var(--Surface-White, #fff);
+  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
+  color: #345995;
+  text-align: center;
+  font-family: Lato;
   font-size: 16px;
   font-style: normal;
-  font-weight: 600;
-  line-height: 24px; /* 150% */
-}
-
-.topbar-filter {
+  font-weight: 500;
+  line-height: normal;
   cursor: pointer;
 }
 
@@ -170,141 +308,88 @@
 
 .editing .editing-container p.heading {
   color: #3a3541;
-  text-align: center;
   font-family: Lato;
-  font-size: 20.25px;
+  font-size: 22.78px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 700;
   line-height: normal;
-}
-
-.editing .editing-container .profile {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 20px;
-  margin-top: 25px;
-}
-
-.editing .editing-container .photo {
-  width: 300px;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  align-items: center;
-  gap: 10px;
-  position: relative;
-}
-
-.editing .editing-container .photo div {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 30px;
-  height: 30px;
-  border-radius: 50%;
-  padding: 5px;
-  background-color: #345995;
-  cursor: pointer;
-  position: absolute;
-  top: 65px;
-  right: 95px;
-}
-
-.editing .editing-container .photo div img {
-  width: 100%;
-  height: 100%;
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.editing .editing-container .photo img {
-  width: 100px;
-  height: 100px;
-  border-radius: 50%;
-  object-fit: cover;
   margin: 0;
-  display: block;
+  text-align: left;
 }
 
-.editing .editing-container .photo span,
-.editing .editing-container .profile .house-shifting p.heading {
+.payment .editing-container hr {
+  border: 1px solid #dbdcde;
+  margin: 15px 0;
+}
+
+.payment-elem {
+  display: flex;
+  width: 241px;
+  height: 80px;
+  padding: 23px 30.874px 24.5px 20px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 1px solid #dbdcde;
+  background: #fff;
+}
+
+.payment-elem input {
+  cursor: pointer;
+}
+
+.payment-elem section p:first-child {
   color: #3a3541;
-  font-family: "DM Sans";
+  font-family: Lato;
   font-size: 16px;
   font-style: normal;
   font-weight: 500;
   line-height: normal;
   margin: 0;
+  margin-bottom: 8px;
 }
 
-.editing .editing-container .profile .house-shifting {
-  width: 330px;
-  height: 105px;
-  flex-shrink: 0;
-  border-radius: 8px;
-  background: #fff;
-  box-shadow: 0px 0px 4px 0px rgba(0, 0, 0, 0.15);
-  position: relative;
-  padding: 15px;
-}
-
-.editing .editing-container .profile .house-shifting p.heading {
-  text-align: left;
-  margin-top: 5px;
-}
-
-.editing .editing-container .profile .house-shifting p.city {
-  color: #3a3541;
-  font-family: Lato;
-  font-size: 12.64px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-  margin: 0;
-}
-
-.editing .editing-container .profile .house-shifting div {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-top: 15px;
-}
-
-.editing .editing-container .profile .house-shifting div img {
-  width: 16px;
-  height: 16px;
-  margin: 0;
-}
-
-.editing .editing-container .profile .house-shifting div span {
-  color: #3a3541;
-  font-family: Lato;
-  font-size: 12.64px;
-  font-style: normal;
-  font-weight: 400;
-  line-height: normal;
-}
-
-.label-calender {
-  display: inline-flex;
-  padding: 4px 9px;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
-  border-radius: 8px;
-  border: 0.5px dashed #2dccff;
-  background: #f4fcff;
-  color: #2dccff;
-  text-align: center;
+.payment-elem p:last-child {
+  color: #89868d;
   font-family: Lato;
   font-size: 10px;
   font-style: normal;
   font-weight: 400;
   line-height: normal;
-  position: absolute;
-  top: 15px;
-  right: 15px;
+  margin: 0;
+}
+
+.payment-elem p:last-child span:first-child {
+  color: #89868d;
+}
+
+.payment-elem p:last-child span:last-child {
+  color: #3a3541;
+  cursor: pointer;
+}
+
+.payment-elem.focused {
+  border-color: #345995;
+}
+
+.payment-elem:last-child {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  width: 80px;
+  cursor: pointer;
+}
+
+.payment-elem:last-child span {
+  color: #345995;
+  font-family: Lato;
+  font-size: 10px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .editing .editing-container .profile-details {
@@ -487,18 +572,44 @@
   outline: none;
 }
 
-.delete-alert .delete-alert-container .btns button:nth-child(1) {
-  background-color: #ebeef4;
-  color: #345995;
-}
-
-.delete-alert .delete-alert-container .btns button:nth-child(2) {
-  background-color: #f75555;
-}
-
 .delete-alert .delete-alert-container .hide-delete {
   position: absolute;
   top: 10px;
   right: 15px;
   cursor: pointer;
+}
+
+.ivoice-checkbox input[type="checkbox"] {
+  width: 15.75px;
+  height: 18px;
+}
+
+.ivoice-checkbox label {
+  color: #89868d !important;
+  font-family: Lato;
+  font-size: 14.22px !important;
+  font-style: normal;
+  font-weight: 400 !important;
+  line-height: normal;
+}
+
+button.default-btn {
+  background-color: #345995 !important;
+  color: #fff !important;
+  border-color: #345995 !important;
+  font-family: Lato;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+}
+
+button.default-btn span {
+  font-weight: 700;
+}
+
+.payment-elem input[type="checkbox"] {
+  width: 26.25px;
+  height: 30px;
+  flex-shrink: 0;
 }

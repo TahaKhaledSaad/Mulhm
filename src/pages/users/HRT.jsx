@@ -81,7 +81,7 @@ export default function HRT() {
       totalOrders: 5,
       location: "Lagos, Nigeria",
       phone: "+234 123 456 7890",
-      action: "Edit",
+
       image: avatar,
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
@@ -94,7 +94,7 @@ export default function HRT() {
       totalOrders: 10,
       location: "Nairobi, Kenya",
       phone: "+254 123 456 7890",
-      action: "Edit",
+
       image: avatar,
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
@@ -107,7 +107,7 @@ export default function HRT() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
@@ -120,7 +120,7 @@ export default function HRT() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
@@ -133,7 +133,7 @@ export default function HRT() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
@@ -146,7 +146,7 @@ export default function HRT() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
@@ -159,7 +159,7 @@ export default function HRT() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
@@ -172,7 +172,7 @@ export default function HRT() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
@@ -185,7 +185,7 @@ export default function HRT() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
@@ -198,7 +198,7 @@ export default function HRT() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
@@ -211,7 +211,7 @@ export default function HRT() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
@@ -224,7 +224,7 @@ export default function HRT() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
@@ -237,7 +237,7 @@ export default function HRT() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
@@ -250,7 +250,7 @@ export default function HRT() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
@@ -263,7 +263,7 @@ export default function HRT() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
       type: "Repairing",
       orderedType: "04.12.2021 20:24",
@@ -295,7 +295,7 @@ export default function HRT() {
         </Link>
       </div>
 
-      <div className="table-container">
+      <div className="table-container mb-4">
         <div className="d-flex justify-content-between mb-1">
           <div
             className="topbar-filter"

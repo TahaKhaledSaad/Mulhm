@@ -71,7 +71,7 @@ export default function ServicesList() {
       category: 5,
       catId: "Lagos, Nigeria",
       cost: "+234 123 456 7890",
-      action: "Edit",
+
       image: category1,
     },
     {
@@ -80,7 +80,7 @@ export default function ServicesList() {
       category: 10,
       catId: "Nairobi, Kenya",
       cost: "+254 123 456 7890",
-      action: "Edit",
+
       image: category2,
     },
     {
@@ -89,7 +89,7 @@ export default function ServicesList() {
       category: 15,
       catId: "Kampala, Uganda",
       cost: "+256 123 456 7890",
-      action: "Edit",
+
       image: category3,
     },
     {
@@ -98,7 +98,7 @@ export default function ServicesList() {
       category: 15,
       catId: "Kampala, Uganda",
       cost: "+256 123 456 7890",
-      action: "Edit",
+
       image: category4,
     },
     {
@@ -107,7 +107,7 @@ export default function ServicesList() {
       category: 15,
       catId: "Kampala, Uganda",
       cost: "+256 123 456 7890",
-      action: "Edit",
+
       image: category5,
     },
     {
@@ -116,7 +116,7 @@ export default function ServicesList() {
       category: 15,
       catId: "Kampala, Uganda",
       cost: "+256 123 456 7890",
-      action: "Edit",
+
       image: category6,
     },
     {
@@ -125,7 +125,7 @@ export default function ServicesList() {
       category: 15,
       catId: "Kampala, Uganda",
       cost: "+256 123 456 7890",
-      action: "Edit",
+
       image: category7,
     },
     {
@@ -134,7 +134,7 @@ export default function ServicesList() {
       category: 15,
       catId: "Kampala, Uganda",
       cost: "+256 123 456 7890",
-      action: "Edit",
+
       image: category8,
     },
     {
@@ -143,7 +143,7 @@ export default function ServicesList() {
       category: 15,
       catId: "Kampala, Uganda",
       cost: "+256 123 456 7890",
-      action: "Edit",
+
       image: category9,
     },
     {
@@ -152,7 +152,7 @@ export default function ServicesList() {
       category: 15,
       catId: "Kampala, Uganda",
       cost: "+256 123 456 7890",
-      action: "Edit",
+
       image: category9,
     },
     {
@@ -161,7 +161,7 @@ export default function ServicesList() {
       category: 15,
       catId: "Kampala, Uganda",
       cost: "+256 123 456 7890",
-      action: "Edit",
+
       image: category9,
     },
     {
@@ -170,7 +170,7 @@ export default function ServicesList() {
       category: 15,
       catId: "Kampala, Uganda",
       cost: "+256 123 456 7890",
-      action: "Edit",
+
       image: category9,
     },
   ];
@@ -197,7 +197,7 @@ export default function ServicesList() {
         </button>
       </div>
 
-      <div className="table-container">
+      <div className="table-container mb-4">
         <DataTable
           columns={columns}
           data={data}

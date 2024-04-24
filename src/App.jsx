@@ -13,6 +13,10 @@ import HRT from "./pages/users/HRT";
 import AddUser from "./pages/users/addUser/AddUser";
 import ServicesList from "./pages/services/servicesList/ServicesList";
 import Calender from "./pages/services/calender/Calender";
+import Notifications from "./pages/notifications/Notifications";
+import Payment from "./pages/payment/Payment";
+import Coupons from "./pages/coupons/Coupons";
+import Account from "./pages/account/Account";
 
 const App = () => {
   return (
@@ -40,9 +44,10 @@ const App = () => {
               <Route path="calender" element={<Calender />} />
             </Route>
             <Route path="chat" element={<h3>Chat</h3>} />
-            <Route path="notifications" element={<h3>Notifications</h3>} />
-            <Route path="payment" element={<h3>Payment</h3>} />
-            <Route path="coupons" element={<h3>Coupons</h3>} />
+            <Route path="notifications" element={<Notifications />} />
+            <Route path="payment" element={<Payment />} />
+            <Route path="coupons" element={<Coupons />} />
+            <Route path="account" element={<Account />} />
           </Route>
         </Routes>
       </Router>

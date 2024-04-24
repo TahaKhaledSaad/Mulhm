@@ -74,7 +74,7 @@ export default function UsersProfiles() {
       totalOrders: 5,
       location: "Lagos, Nigeria",
       phone: "+234 123 456 7890",
-      action: "Edit",
+
       image: avatar,
     },
     {
@@ -83,7 +83,7 @@ export default function UsersProfiles() {
       totalOrders: 10,
       location: "Nairobi, Kenya",
       phone: "+254 123 456 7890",
-      action: "Edit",
+
       image: avatar,
     },
     {
@@ -92,7 +92,7 @@ export default function UsersProfiles() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
     },
     {
@@ -101,7 +101,7 @@ export default function UsersProfiles() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
     },
     {
@@ -110,7 +110,7 @@ export default function UsersProfiles() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
     },
     {
@@ -119,7 +119,7 @@ export default function UsersProfiles() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
     },
     {
@@ -128,7 +128,7 @@ export default function UsersProfiles() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
     },
     {
@@ -137,7 +137,7 @@ export default function UsersProfiles() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
     },
     {
@@ -146,7 +146,7 @@ export default function UsersProfiles() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
     },
     {
@@ -155,7 +155,7 @@ export default function UsersProfiles() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
     },
     {
@@ -164,7 +164,7 @@ export default function UsersProfiles() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
     },
     {
@@ -173,7 +173,7 @@ export default function UsersProfiles() {
       totalOrders: 15,
       location: "Kampala, Uganda",
       phone: "+256 123 456 7890",
-      action: "Edit",
+
       image: avatar,
     },
   ];
@@ -201,7 +201,7 @@ export default function UsersProfiles() {
         </Link>
       </div>
 
-      <div className="table-container">
+      <div className="table-container mb-4">
         <DataTable
           columns={columns}
           data={data}
