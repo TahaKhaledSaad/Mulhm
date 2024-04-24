@@ -17,6 +17,7 @@ import Notifications from "./pages/notifications/Notifications";
 import Payment from "./pages/payment/Payment";
 import Coupons from "./pages/coupons/Coupons";
 import Account from "./pages/account/Account";
+import Chat from "./pages/chat/Chat";
 
 const App = () => {
   return (
@@ -43,7 +44,7 @@ const App = () => {
               <Route path="service-list" element={<ServicesList />} />
               <Route path="calender" element={<Calender />} />
             </Route>
-            <Route path="chat" element={<h3>Chat</h3>} />
+            <Route path="chat" element={<Chat />} />
             <Route path="notifications" element={<Notifications />} />
             <Route path="payment" element={<Payment />} />
             <Route path="coupons" element={<Coupons />} />
