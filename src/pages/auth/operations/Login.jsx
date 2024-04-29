@@ -1,10 +1,40 @@
-import img from "./../../../assets/login.svg";
+import { Link } from "react-router-dom";
+import { useState } from "react";
+import axios from "axios";
+import { AUTH, BASE_URL, LOGIN } from "../../../api/API";
+
 import google from "./../../../assets/google.svg";
 import facebook from "./../../../assets/facebook.svg";
+import test from "./../../../assets/test.svg";
 import "./style.css";
-import { Link } from "react-router-dom";
 
 export default function Login() {
+  // *** States ***
+  const [form, setForm] = useState({
+    email: "",
+    password: "",
+    deviceToken: "",
+  });
+
+  // *** Functions ***
+  // [1] handleChange
+  const handleChange = (e) => {
+    setForm({ ...form, [e.target.name]: e.target.value });
+  };
+  // [2] sendData
+  const sendData = (e) => {
+    e.preventDefault();
+    console.log(form);
+    axios
+      .post(`${BASE_URL}/${AUTH}/${LOGIN}`, form)
+      .then((res) => {
+        console.log(res.data);
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  };
+
   return (
     <div className="parent">
       <div className="parent-content">
@@ -12,9 +42,21 @@ export default function Login() {
           <div className="form-data">
             <h2>Login</h2>
             <p className="desc">How do i get started lorem ipsum dolor at?</p>
-            <form>
-              <input type="email" placeholder="Enter your email" />
-              <input type="password" placeholder=". . . . . . . . . . . . ." />
+            <form onSubmit={sendData}>
+              <input
+                type="email"
+                placeholder="Enter your email"
+                name="email"
+                value={form.email}
+                onChange={handleChange}
+              />
+              <input
+                type="password"
+                placeholder=". . . . . . . . . . . . ."
+                name="password"
+                value={form.password}
+                onChange={handleChange}
+              />
               <p style={{ textAlign: "right", fontSize: "14.22px" }}>
                 <Link to="/forget-password">
                   <span>Forget Password</span>
@@ -39,19 +81,7 @@ export default function Login() {
           </div>
         </div>
         <div className="image-cover">
-          <p>
-            Very good works are <br />
-            waiting for you
-          </p>
-          <img
-            src={img}
-            alt="Sign In Image"
-            style={{
-              position: "absolute",
-              bottom: "0",
-              width: "60%",
-            }}
-          />
+          <img src={test} alt="Mulhm" />
         </div>
       </div>
     </div>

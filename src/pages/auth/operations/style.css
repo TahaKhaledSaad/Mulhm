@@ -1,220 +1,231 @@
 .parent {
-    width: 100vw;
-    height: 100vh;
-    background-color: #f4f5f9;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
+  width: 100vw;
+  background-color: #f4f5f9;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+  padding: 30px 0;
 }
 
 .parent .parent-content {
-    width: calc(100% - 100px);
-    height: calc(100% - 100px);
-    background-color: #fff;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 20px;
-    border-radius: 30px;
-    overflow: hidden;
+  width: calc(100% - 100px);
+  height: calc(100% - 100px);
+  background-color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  border-radius: 30px;
+  overflow: hidden;
+  box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.1);
 }
 
 /* Main Info  */
 
 .parent .parent-content .main-info {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 2;
 }
 
 .parent .parent-content .main-info .form-data {
-    width: fit-content;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  width: fit-content;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 .parent .parent-content .main-info h2 {
-    font-family: Lato;
-    font-size: 28.83px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
+  font-family: Lato;
+  font-size: 28.83px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
 }
 
 .parent .parent-content .main-info p.desc {
-    color: #89868D;
-    font-family: Urbanist;
-    font-size: 12.64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  color: #89868d;
+  font-family: Urbanist;
+  font-size: 12.64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .parent .parent-content .main-info form {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
 }
 
 .parent .parent-content .main-info form input {
-    display: flex;
-    width: 330px;
-    height: 46px;
-    padding: 5px 10px;
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 8px;
-    border: 1px solid #DBDCDE;
-    background: #F4F5F9;
+  display: flex;
+  width: 330px;
+  height: 46px;
+  padding: 5px 10px;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  border: 1px solid #dbdcde;
+  background: #f4f5f9;
 }
 
 .parent .parent-content .main-info form input:focus {
-    outline: none;
-    border-color: #345995;
+  outline: none;
+  border-color: #345995;
 }
 
 .parent .parent-content .main-info form p {
-    color: #727272;
-    font-family: Urbanist;
-    font-size: 12.64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  color: #727272;
+  font-family: Urbanist;
+  font-size: 12.64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .parent .parent-content .main-info form p span {
-    color: #345995;
-    cursor: pointer;
+  color: #345995;
+  cursor: pointer;
 }
 
 .parent .parent-content .main-info form label {
-    color:  #3A3541;
-    font-family: Lato;
-    font-size: 14.22px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
+  color: #3a3541;
+  font-family: Lato;
+  font-size: 14.22px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
 }
 
 .parent .parent-content .main-info form button {
-    display: flex;
-    width: 330px;
-    height: 46px;
-    padding: 12px 0px 15px 0px;
-    justify-content: center;
-    align-items: center;
-    flex-shrink: 0;
-    border-radius: 8px;
-    background-color: #345995;
-    color: #fff;
-    border: none;
+  display: flex;
+  width: 330px;
+  height: 46px;
+  padding: 12px 0px 15px 0px;
+  justify-content: center;
+  align-items: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background-color: #345995;
+  color: #fff;
+  border: none;
 }
 
 .parent .parent-content .main-info form button:focus {
-    outline: none;
+  outline: none;
 }
 
 .parent .parent-content .main-info p:last-child {
-    color: #89868D;
-    font-family: Urbanist;
-    font-size: 12.64px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: normal;
-    margin-top: 20px;
+  color: #89868d;
+  font-family: Urbanist;
+  font-size: 12.64px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  margin-top: 20px;
 }
 
 .parent .parent-content .main-info p:last-child span {
-    color: #345995;
-    cursor: pointer;
+  color: #345995;
+  cursor: pointer;
 }
 
 .parent .parent-content .main-info .form-data .sign-with {
-    width: 330px;
-    height: 46px;
-    flex-shrink: 0;
-    border-radius: 24px;
-    border: 1px solid #DBDCDE;
-    background: #FFF;
-    margin-top: 20px;
-    display: flex;
-    align-items: center;
-    gap: 10px;
-    cursor: pointer;
+  width: 330px;
+  height: 46px;
+  flex-shrink: 0;
+  border-radius: 24px;
+  border: 1px solid #dbdcde;
+  background: #fff;
+  margin-top: 20px;
+  gap: 10px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .parent .parent-content .main-info .form-data .sign-with img {
-    width: 18px;
+  width: 18px;
 }
 
 /* Image Cover */
 
-.parent .parent-content .image-cover {
-    flex: 1;
-    height: calc(100% - 20px);
-    background-color: #345995;
-    border-radius: 15px;
-    padding: 60px;
-    padding-bottom: 0px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+/* .parent .parent-content .image-cover {
+  flex: 1;
+  height: calc(100% - 20px);
+  background-color: #345995;
+  border-radius: 15px;
+  padding: 60px;
+  padding-bottom: 0px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 }
 
 .parent .parent-content .image-cover p {
-    color: #fff;
-    font-family: Lato;
-    font-size: 30px;
-    font-style: normal;
-    font-weight: 700;
-    line-height: normal;
-    z-index: 9999;
+  color: #fff;
+  font-family: Lato;
+  font-size: 30px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: normal;
+  z-index: 9999;
 }
 
 img {
-    width: 80%;
-    margin-left: 20%;
-}
+  width: 80%;
+  margin-left: 20%;
+} */
 
 /* Media Quiery */
 
 @media (max-width: 1100px) {
-    .parent .parent-content .image-cover {
-        display: none;
-    }
+  .parent .parent-content .image-cover {
+    display: none;
+  }
+  .parent .parent-content {
+    width: auto;
+  }
 }
 
-@media (max-width:700px) {
-    .parent .parent-content {
-        width: calc(100% - 50px);
-        height: calc(100% - 50px);
-    }
+@media (max-width: 700px) {
+  .parent .parent-content {
+    width: calc(100% - 50px);
+    height: calc(100% - 50px);
+  }
 
-    .parent .parent-content .main-info .form-data {
-        width: 100%;
-    }
+  .parent .parent-content .main-info .form-data {
+    width: 100%;
+  }
 
-    .parent .parent-content .main-info form input,
-    .parent .parent-content .main-info form button {
-        width: 100%;
-    }
+  .parent .parent-content .main-info form input,
+  .parent .parent-content .main-info form button {
+    width: 100%;
+  }
 
-    .parent .parent-content .main-info .form-data .sign-with {
-        margin: 20px auto;
-        margin-bottom: 0;
-    }
+  .parent .parent-content .main-info .form-data .sign-with {
+    margin: 20px auto;
+    margin-bottom: 0;
+  }
 }
 
 @media (max-width: 420px) {
-    .parent .parent-content .main-info .form-data {
-        width: 250px;
-    }
-    .parent .parent-content .main-info .form-data .sign-with {
-        width: 100%;
-    }
+  .parent .parent-content .main-info .form-data {
+    width: 250px;
+  }
+  .parent .parent-content .main-info .form-data .sign-with {
+    width: 100%;
+  }
+}
+
+.main-info .pass-rules {
+  margin: 0 !important;
+  width: auto !important;
+  padding-bottom: 0 !important;
 }
