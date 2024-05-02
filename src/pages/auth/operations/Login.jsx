@@ -10,6 +10,7 @@ import "./style.css";
 
 export default function Login() {
   // *** States ***
+
   const [form, setForm] = useState({
     email: "",
     password: "",
@@ -17,10 +18,12 @@ export default function Login() {
   });
 
   // *** Functions ***
+
   // [1] handleChange
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+
   // [2] sendData
   const sendData = (e) => {
     e.preventDefault();

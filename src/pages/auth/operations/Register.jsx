@@ -1,13 +1,16 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { AUTH, BASE_URL, REGISTER } from "../../../api/API";
+import { toast, ToastContainer } from "react-toastify";
 
 import img from "./../../../assets/signup.svg";
 import "./style.css";
 
 export default function Register() {
   // *** States ***
+
+  // [1] form
   const [form, setForm] = useState({
     firstName: "",
     lastName: "",
@@ -15,10 +18,23 @@ export default function Register() {
     password: "",
     deviceToken: "",
   });
+
+  // [2] passwordError
   const [passwordError, setPasswordError] = useState(false);
+
+  // [3] error
   const [error, setError] = useState(false);
 
+  // [4] navigate
+  const navigate = useNavigate();
+
+  // [5] resolveWithSomeData
+  const resolveWithSomeData = () => {
+    navigate("/login");
+  };
+
   // *** Functions ***
+
   // [1] handleChange
   const handleChange = (e) => {
     if (e.target.name === "password") {
@@ -26,6 +42,9 @@ export default function Register() {
     }
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+
+  console.log(toast);
+
   // [2] validatePassword
   const validatePassword = (password) => {
     const regex = /^(?=.*[A-Z])(?=.*[!@#$&*])(?=.*[0-9])(?=.*[a-z]).{8,32}$/;
@@ -36,6 +55,7 @@ export default function Register() {
     setPasswordError(false);
     return true;
   };
+
   // [3] sendData
   const sendData = (e) => {
     e.preventDefault();
@@ -44,18 +64,35 @@ export default function Register() {
       return;
     }
     console.log(form);
+    const loadingToastId = toast.loading("Please wait while we register you", {
+      position: "bottom-right",
+      autoClose: false,
+    });
     axios
       .post(`${BASE_URL}/${AUTH}/${REGISTER}`, form)
       .then((res) => {
         console.log(res.data);
+        toast.dismiss(loadingToastId);
+        toast.success(res.data.message, {
+          id: "success",
+          position: "bottom-right",
+          autoClose: 3000,
+        });
+        resolveWithSomeData();
       })
       .catch((err) => {
         console.log(err);
+        toast.dismiss(loadingToastId); 
+        toast.error(err.response.data.message, {
+          position: "bottom-right",
+          autoClose: 3000,
+        });
       });
   };
 
   return (
     <div className="parent">
+      <ToastContainer />
       <div className="parent-content">
         <div className="main-info">
           <div className="form-data">
@@ -68,6 +105,7 @@ export default function Register() {
                 name="firstName"
                 value={form.firstName}
                 onChange={handleChange}
+                required
               />
               <input
                 type="text"
@@ -75,6 +113,7 @@ export default function Register() {
                 name="lastName"
                 value={form.lastName}
                 onChange={handleChange}
+                required
               />
               <input
                 type="email"
@@ -82,6 +121,7 @@ export default function Register() {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
+                required
               />
               <input
                 type="password"
@@ -89,6 +129,7 @@ export default function Register() {
                 name="password"
                 value={form.password}
                 onChange={handleChange}
+                required
               />
               {passwordError && error && (
                 <div className="pass-rules">
