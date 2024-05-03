@@ -24,7 +24,7 @@ export default function ForgetPassword() {
               <button>Reset Password</button>
             </form>
             <p style={{ textAlign: "center", fontSize: "14.22px" }}>
-              <Link to="/login">
+              <Link to="/">
                 <span>Back to login</span>
               </Link>
             </p>

@@ -19,7 +19,7 @@ export default function Sidebar() {
 
         {/* Links */}
 
-        <NavLink to="dashboard" className="link d-flex gap-2">
+        <NavLink to="/home/dashboard" className="link d-flex gap-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="24"
@@ -108,7 +108,7 @@ export default function Sidebar() {
 
         {openUsers && (
           <div className="p-3 py-0">
-            <NavLink to="users/profile" className="link d-flex gap-2">
+            <NavLink to="/home/users/profile" className="link d-flex gap-2">
               <svg
                 width="25"
                 height="24"
@@ -121,7 +121,7 @@ export default function Sidebar() {
 
               <p>Users Profile</p>
             </NavLink>
-            <NavLink to="users/hrt" className="link d-flex gap-2">
+            <NavLink to="/home/users/hrt" className="link d-flex gap-2">
               <svg
                 width="25"
                 height="24"
@@ -186,7 +186,7 @@ export default function Sidebar() {
 
         {openService && (
           <div className="p-3 py-0">
-            <NavLink to="service/service-list" className="link d-flex gap-2">
+            <NavLink to="/home/service/service-list" className="link d-flex gap-2">
               <svg
                 width="25"
                 height="24"
@@ -199,7 +199,7 @@ export default function Sidebar() {
 
               <p>Services List</p>
             </NavLink>
-            <NavLink to="service/calender" className="link d-flex gap-2">
+            <NavLink to="/home/service/calender" className="link d-flex gap-2">
               <svg
                 width="25"
                 height="24"
@@ -214,7 +214,7 @@ export default function Sidebar() {
           </div>
         )}
 
-        <NavLink to="chat" className="link d-flex gap-2">
+        <NavLink to="/home/chat" className="link d-flex gap-2">
           <svg
             width="25"
             height="24"
@@ -237,7 +237,7 @@ export default function Sidebar() {
           <p>Chat</p>
         </NavLink>
 
-        <NavLink to="notifications" className="link d-flex gap-2">
+        <NavLink to="/home/notifications" className="link d-flex gap-2">
           <svg
             width="25"
             height="24"
@@ -258,7 +258,7 @@ export default function Sidebar() {
           <p>Notifications</p>
         </NavLink>
 
-        <NavLink to="payment" className="link d-flex gap-2">
+        <NavLink to="/home/payment" className="link d-flex gap-2">
           <svg
             width="25"
             height="24"
@@ -282,7 +282,7 @@ export default function Sidebar() {
           <p>Payment</p>
         </NavLink>
 
-        <NavLink to="coupons" className="link d-flex gap-2">
+        <NavLink to="/home/coupons" className="link d-flex gap-2">
           <svg
             width="25"
             height="24"
@@ -311,7 +311,7 @@ export default function Sidebar() {
           <p>Mulhm</p>
           <p>tahakhsaad55@gmail.com</p>
         </div>
-        <Link to="/account">
+        <Link to="home///account">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"

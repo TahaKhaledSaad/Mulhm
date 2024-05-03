@@ -182,7 +182,7 @@ export default function UsersProfiles() {
     <div className="user-profiles">
       <div className="header">
         <Topbar title="Users Profile" />
-        <Link to="/users/add-user">
+        <Link to="/home/users/add-user">
           <button>
             <svg
               width="12"

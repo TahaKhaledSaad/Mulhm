@@ -28,11 +28,6 @@ export default function Register() {
   // [4] navigate
   const navigate = useNavigate();
 
-  // [5] resolveWithSomeData
-  const resolveWithSomeData = () => {
-    navigate("/login");
-  };
-
   // *** Functions ***
 
   // [1] handleChange
@@ -42,8 +37,6 @@ export default function Register() {
     }
     setForm({ ...form, [e.target.name]: e.target.value });
   };
-
-  console.log(toast);
 
   // [2] validatePassword
   const validatePassword = (password) => {
@@ -78,11 +71,13 @@ export default function Register() {
           position: "bottom-right",
           autoClose: 3000,
         });
-        resolveWithSomeData();
+        setTimeout(() => {
+          navigate("/login");
+        }, 3000);
       })
       .catch((err) => {
         console.log(err);
-        toast.dismiss(loadingToastId); 
+        toast.dismiss(loadingToastId);
         toast.error(err.response.data.message, {
           position: "bottom-right",
           autoClose: 3000,
@@ -151,7 +146,7 @@ export default function Register() {
             </form>
             <p>
               Already a member?{" "}
-              <Link to="/login">
+              <Link to="/">
                 <span>Sign in</span>
               </Link>
             </p>

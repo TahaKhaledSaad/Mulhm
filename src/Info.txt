@@ -3,3 +3,4 @@ Accounts:
 
 Links
     - Figma: https://www.figma.com/file/vIeyhTQDZyfaYTwCCIwpO3/%D9%85%D9%84%D9%87%D9%85?type=design&node-id=0-1&mode=design&t=8EAnTMgZoAKcA0wY-0
+    - Postman: https://documenter.getpostman.com/view/26297954/2sA35Bb4Fm

@@ -18,37 +18,45 @@ import Payment from "./pages/payment/Payment";
 import Coupons from "./pages/coupons/Coupons";
 import Account from "./pages/account/Account";
 import Chat from "./pages/chat/Chat";
+import Work from "./redux/Work";
+import RequireAuth from "./pages/auth/protecting/RequireAuth";
+import RequireBack from "./pages/auth/protecting/RequireBack";
 
 const App = () => {
   return (
     <div>
+      <Work />
       <Router>
         <Routes>
           {/* Auth Routes */}
-          <Route path="/register" element={<Register />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/forget-password" element={<ForgetPassword />} />
+          <Route element={<RequireBack />}>
+            <Route path="/register" element={<Register />} />
+            <Route path="/" element={<Login />} />
+            <Route path="/forget-password" element={<ForgetPassword />} />
+          </Route>
 
           {/* Dashboard Routes */}
-          <Route path="/" element={<Home />}>
-            <Route index element={<Dashboard />} />
-            <Route path="dashboard" element={<Dashboard />} />
-            <Route path="users">
-              <Route index element={<UsersProfiles />} />
-              <Route path="profile" element={<UsersProfiles />} />
-              <Route path="hrt" element={<HRT />} />
-              <Route path="add-user" element={<AddUser />} />
+          <Route element={<RequireAuth />}>
+            <Route path="/home" element={<Home />}>
+              <Route index element={<Dashboard />} />
+              <Route path="dashboard" element={<Dashboard />} />
+              <Route path="users">
+                <Route index element={<UsersProfiles />} />
+                <Route path="profile" element={<UsersProfiles />} />
+                <Route path="hrt" element={<HRT />} />
+                <Route path="add-user" element={<AddUser />} />
+              </Route>
+              <Route path="service">
+                <Route index element={<ServicesList />} />
+                <Route path="service-list" element={<ServicesList />} />
+                <Route path="calender" element={<Calender />} />
+              </Route>
+              <Route path="chat" element={<Chat />} />
+              <Route path="notifications" element={<Notifications />} />
+              <Route path="payment" element={<Payment />} />
+              <Route path="coupons" element={<Coupons />} />
+              <Route path="account" element={<Account />} />
             </Route>
-            <Route path="service">
-              <Route index element={<ServicesList />} />
-              <Route path="service-list" element={<ServicesList />} />
-              <Route path="calender" element={<Calender />} />
-            </Route>
-            <Route path="chat" element={<Chat />} />
-            <Route path="notifications" element={<Notifications />} />
-            <Route path="payment" element={<Payment />} />
-            <Route path="coupons" element={<Coupons />} />
-            <Route path="account" element={<Account />} />
           </Route>
         </Routes>
       </Router>

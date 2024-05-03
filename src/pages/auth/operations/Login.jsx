@@ -1,7 +1,9 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useState } from "react";
 import axios from "axios";
 import { AUTH, BASE_URL, LOGIN } from "../../../api/API";
+import { toast, ToastContainer } from "react-toastify";
+import Cookie from "cookie-universal";
 
 import google from "./../../../assets/google.svg";
 import facebook from "./../../../assets/facebook.svg";
@@ -17,6 +19,10 @@ export default function Login() {
     deviceToken: "",
   });
 
+  const navigate = useNavigate();
+
+  const cookies = new Cookie();
+
   // *** Functions ***
 
   // [1] handleChange
@@ -28,18 +34,47 @@ export default function Login() {
   const sendData = (e) => {
     e.preventDefault();
     console.log(form);
+    const loadingToastId = toast.loading("Please wait while we register you", {
+      position: "bottom-right",
+      autoClose: false,
+    });
     axios
       .post(`${BASE_URL}/${AUTH}/${LOGIN}`, form)
       .then((res) => {
         console.log(res.data);
+        // Set token in cookie
+        cookies.set("mulhm-token", res.data.data);
+        // Stop loading toast
+        toast.dismiss(loadingToastId);
+        // Start success toast
+        toast.success(res.data.message, {
+          position: "bottom-right",
+          autoClose: 3000,
+        });
+        setTimeout(() => {
+          navigate("/home/dashboard");
+        }, 3000);
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err.response.data);
+        toast.dismiss(loadingToastId);
+        if (err.response.data.message === "User is disabled") {
+          toast.info("Check email to verify account.", {
+            position: "bottom-right",
+            autoClose: 3000,
+          });
+        } else {
+          toast.error(err.response.data.message, {
+            position: "bottom-right",
+            autoClose: 3000,
+          });
+        }
       });
   };
 
   return (
     <div className="parent">
+      <ToastContainer />
       <div className="parent-content">
         <div className="main-info">
           <div className="form-data">
@@ -52,6 +87,7 @@ export default function Login() {
                 name="email"
                 value={form.email}
                 onChange={handleChange}
+                required
               />
               <input
                 type="password"
@@ -59,6 +95,7 @@ export default function Login() {
                 name="password"
                 value={form.password}
                 onChange={handleChange}
+                required
               />
               <p style={{ textAlign: "right", fontSize: "14.22px" }}>
                 <Link to="/forget-password">
