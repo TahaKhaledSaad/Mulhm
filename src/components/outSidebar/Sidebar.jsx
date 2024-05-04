@@ -186,7 +186,10 @@ export default function Sidebar() {
 
         {openService && (
           <div className="p-3 py-0">
-            <NavLink to="/home/service/service-list" className="link d-flex gap-2">
+            <NavLink
+              to="/home/service/service-list"
+              className="link d-flex gap-2"
+            >
               <svg
                 width="25"
                 height="24"
@@ -311,7 +314,7 @@ export default function Sidebar() {
           <p>Mulhm</p>
           <p>tahakhsaad55@gmail.com</p>
         </div>
-        <Link to="home///account">
+        <Link to="/home/account">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             width="14"

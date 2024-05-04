@@ -4,6 +4,9 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Register from "./pages/auth/operations/Register";
 import Login from "./pages/auth/operations/Login";
 import ForgetPassword from "./pages/auth/operations/ForgetPassword";
+import RequireAuth from "./pages/auth/protecting/RequireAuth";
+import RequireBack from "./pages/auth/protecting/RequireBack";
+import NotFound from "./pages/auth/notFound/NotFound";
 
 // Dashboard
 import Home from "./pages/home/Home";
@@ -19,8 +22,6 @@ import Coupons from "./pages/coupons/Coupons";
 import Account from "./pages/account/Account";
 import Chat from "./pages/chat/Chat";
 import Work from "./redux/Work";
-import RequireAuth from "./pages/auth/protecting/RequireAuth";
-import RequireBack from "./pages/auth/protecting/RequireBack";
 
 const App = () => {
   return (
@@ -58,6 +59,7 @@ const App = () => {
               <Route path="account" element={<Account />} />
             </Route>
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </Router>
     </div>

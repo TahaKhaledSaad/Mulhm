@@ -72,7 +72,7 @@ export default function Register() {
           autoClose: 3000,
         });
         setTimeout(() => {
-          navigate("/login");
+          navigate("/");
         }, 3000);
       })
       .catch((err) => {

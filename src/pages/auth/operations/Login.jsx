@@ -4,6 +4,7 @@ import axios from "axios";
 import { AUTH, BASE_URL, LOGIN } from "../../../api/API";
 import { toast, ToastContainer } from "react-toastify";
 import Cookie from "cookie-universal";
+import { jwtDecode } from "jwt-decode";
 
 import google from "./../../../assets/google.svg";
 import facebook from "./../../../assets/facebook.svg";
@@ -42,15 +43,28 @@ export default function Login() {
       .post(`${BASE_URL}/${AUTH}/${LOGIN}`, form)
       .then((res) => {
         console.log(res.data);
+        // remove old mulhm-token
+        cookies.remove("mulhm-token");
+        // Decode token
+        const decodedToken = jwtDecode(res.data.data);
         // Set token in cookie
-        cookies.set("mulhm-token", res.data.data);
+        decodedToken.Role === "ADMIN" &&
+          cookies.set("mulhm-token", res.data.data);
+        // Check if user is not an admin
+        decodedToken.Role !== "ADMIN"
+          ? toast.info("You are not authorized to enter.", {
+              position: "bottom-right",
+              autoClose: 3000,
+            })
+          : null;
         // Stop loading toast
         toast.dismiss(loadingToastId);
         // Start success toast
-        toast.success(res.data.message, {
-          position: "bottom-right",
-          autoClose: 3000,
-        });
+        decodedToken.Role === "ADMIN" &&
+          toast.success(res.data.message, {
+            position: "bottom-right",
+            autoClose: 3000,
+          });
         setTimeout(() => {
           navigate("/home/dashboard");
         }, 3000);

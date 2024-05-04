@@ -14,7 +14,7 @@ export default function RequireAuth() {
   // email: decodedToken.sub
 
   // Edditting in the token prevent it
-  return token && decodedToken.Role === "USER" ? (
+  return token && decodedToken.Role === "ADMIN" ? (
     <Outlet />
   ) : (
     <Navigate to="/" replace={true} />

@@ -30,7 +30,7 @@ export default function Account() {
 
       <div className="d-flex gap-5">
         {/* Main Data */}
-        <div className="flex-container">
+        <div>
           <div className="user-info pb-5 mb-2">
             <p className="heading">Personal information</p>
             <hr />
@@ -120,7 +120,7 @@ export default function Account() {
         </div>
 
         {/* Secondary Data */}
-        <div className="flex-container">
+        <div>
           <div className="user-info">
             <p className="heading">Your Photo</p>
             <hr />

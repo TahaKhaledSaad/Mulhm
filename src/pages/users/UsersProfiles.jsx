@@ -1,5 +1,5 @@
 import DataTable from "react-data-table-component";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import Topbar from "../../components/dashboard/topbar/Topbar";
 
@@ -13,11 +13,19 @@ import whiteMsg from "./../../assets/whiteMsg.svg";
 
 import "./style.css";
 import { Link } from "react-router-dom";
+import { Axios } from "../../api/Axios";
+import { GET_ALL_USERS } from "../../api/API";
 
 export default function UsersProfiles() {
   //
   const [showEdit, setShowEdit] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
+  //
+  useEffect(() => {
+    Axios.get(`/${GET_ALL_USERS}`).then((res) => {
+      console.log(res.data);
+    });
+  }, []);
   //
   const columns = [
     {
@@ -78,7 +86,7 @@ export default function UsersProfiles() {
       image: avatar,
     },
     {
-      id: 2,
+      id: 2,                     
       name: "Jane Doe",
       totalOrders: 10,
       location: "Nairobi, Kenya",

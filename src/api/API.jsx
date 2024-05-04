@@ -4,7 +4,12 @@ export const AUTH = "auth";
 export const LOGIN = "login";
 export const REGISTER = "register";
 
-// https://api.mulham.co/api/v1/auth/register
-// https://api.mulham.co/api/v1/auth/register
+export const GET_ALL_USERS = "user/all";
+export const GET_USER = "user";
+export const GET_USERS = "user/page";
 
-// pass: http://localhost:5173/register
+export const CATEGORY = "category";
+export const GET_ALL_CATEGORIES = "category/all";
+
+export const SERVICE = "service";
+export const GET_ALL_SERVICES = "service/all";

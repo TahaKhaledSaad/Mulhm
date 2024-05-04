@@ -8,5 +8,5 @@ export default function RequireBack() {
   const token = cookie.get("mulhm-token");
   const decodedToken = token ? jwtDecode(token) : {};
   //
-  return token && decodedToken.Role === "USER" ? window.history.back() : <Outlet />;
+  return token && decodedToken.Role === "ADMIN" ? window.history.back() : <Outlet />;
 }

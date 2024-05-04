@@ -17,12 +17,15 @@ import category8 from "./../../../assets/category8.svg";
 import category9 from "./../../../assets/category9.svg";
 
 import "./style.css";
+import { Axios } from "../../../api/Axios";
+import { SERVICE } from "../../../api/API";
 
 export default function ServicesList() {
   //
   const [showNewService, setShowNewService] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
+
   //
   const columns = [
     {
@@ -175,6 +178,34 @@ export default function ServicesList() {
     },
   ];
 
+  // Function to handle category selection
+  const handleCategorySelection = (category) => {
+    setSelectedCategory(category);
+  };
+
+  const myData = {
+    arabicName: "الأسم العربي",
+    arabicDescription: "الوصف العربي",
+    englishName: "English Name",
+    englishDescription: "English Description",
+    cost: 300,
+    categoryId: 1,
+  };
+
+  console.log(myData);
+  // console.log(selectedCategoryImgFile);
+
+  //
+  const sendData = () => {
+    Axios.post(`/${SERVICE}`, myData)
+      .then((response) => {
+        console.log(response);
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
+
   return (
     <div className="user-profiles">
       <div className="header">
@@ -218,7 +249,7 @@ export default function ServicesList() {
                 className={`elem ${
                   selectedCategory === "Repairing" ? "focused" : ""
                 }`}
-                onClick={() => setSelectedCategory("Repairing")}
+                onClick={() => handleCategorySelection("Repairing")}
               >
                 <img src={category6} alt="Category Image" />
                 <span>Repairing</span>
@@ -228,7 +259,7 @@ export default function ServicesList() {
                 className={`elem ${
                   selectedCategory === "Painting" ? "focused" : ""
                 }`}
-                onClick={() => setSelectedCategory("Painting")}
+                onClick={() => handleCategorySelection("Painting")}
               >
                 <img src={category7} alt="Category Image" />
                 <span>Painting</span>
@@ -236,7 +267,7 @@ export default function ServicesList() {
 
               <div
                 className={`elem ${selectedCategory === "AC" ? "focused" : ""}`}
-                onClick={() => setSelectedCategory("AC")}
+                onClick={() => handleCategorySelection("AC")}
               >
                 <img src={category8} alt="Category Image" />
                 <span>AC</span>
@@ -246,7 +277,7 @@ export default function ServicesList() {
                 className={`elem ${
                   selectedCategory === "Electonics" ? "focused" : ""
                 }`}
-                onClick={() => setSelectedCategory("Electonics")}
+                onClick={() => handleCategorySelection("Electonics")}
               >
                 <img src={category9} alt="Category Image" />
                 <span>Electonics</span>
@@ -256,7 +287,7 @@ export default function ServicesList() {
                 className={`elem ${
                   selectedCategory === "Shifting" ? "focused" : ""
                 }`}
-                onClick={() => setSelectedCategory("Shifting")}
+                onClick={() => handleCategorySelection("Shifting")}
               >
                 <img src={category1} alt="Category Image" />
                 <span>Shifting</span>
@@ -266,7 +297,7 @@ export default function ServicesList() {
                 className={`elem ${
                   selectedCategory === "Appliance" ? "focused" : ""
                 }`}
-                onClick={() => setSelectedCategory("Appliance")}
+                onClick={() => handleCategorySelection("Appliance")}
               >
                 <img src={category2} alt="Category Image" />
                 <span>Appliance</span>
@@ -276,7 +307,7 @@ export default function ServicesList() {
                 className={`elem ${
                   selectedCategory === "Plumbing" ? "focused" : ""
                 }`}
-                onClick={() => setSelectedCategory("Plumbing")}
+                onClick={() => handleCategorySelection("Plumbing")}
               >
                 <img src={category3} alt="Category Image" />
                 <span>Plumbing</span>
@@ -286,7 +317,7 @@ export default function ServicesList() {
                 className={`elem ${
                   selectedCategory === "Vehicle" ? "focused" : ""
                 }`}
-                onClick={() => setSelectedCategory("Vehicle")}
+                onClick={() => handleCategorySelection("Vehicle")}
               >
                 <img src={category4} alt="Category Image" />
                 <span>Vehicle</span>
@@ -296,7 +327,7 @@ export default function ServicesList() {
                 className={`elem ${
                   selectedCategory === "Other" ? "focused" : ""
                 }`}
-                onClick={() => setSelectedCategory("Other")}
+                onClick={() => handleCategorySelection("Other")}
               >
                 <img src={category5} alt="Category Image" />
                 <span>Other</span>
@@ -358,7 +389,7 @@ export default function ServicesList() {
                 Cancel
               </button>
 
-              <button>Add</button>
+              <button onClick={sendData}>Add</button>
             </div>
           </div>
         </div>
