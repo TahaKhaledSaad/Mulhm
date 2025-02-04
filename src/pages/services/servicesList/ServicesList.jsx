@@ -1,5 +1,6 @@
 import DataTable from "react-data-table-component";
 import { useState } from "react";
+import { toast, ToastContainer } from "react-toastify";
 
 import Topbar from "../../../components/dashboard/topbar/Topbar";
 
@@ -25,6 +26,15 @@ export default function ServicesList() {
   const [showNewService, setShowNewService] = useState(false);
   const [showDelete, setShowDelete] = useState(false);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [formData, setFormData] = useState({
+    arabicName: "None",
+    arabicDescription: "None",
+    englishName: "",
+    englishDescription: "",
+    cost: 0,
+    minutes: 30,
+    categoryId: 1,
+  });
 
   //
   const columns = [
@@ -178,28 +188,45 @@ export default function ServicesList() {
     },
   ];
 
+  // handle change in form data
+  const handleChange = (e) => {
+    if (e.target.name === "cost") {
+      setFormData({ ...formData, [e.target.name]: parseInt(e.target.value) });
+      return;
+    }
+    setFormData({ ...formData, [e.target.name]: e.target.value });
+  };
+
   // Function to handle category selection
   const handleCategorySelection = (category) => {
     setSelectedCategory(category);
   };
 
-  const myData = {
-    arabicName: "الأسم العربي",
-    arabicDescription: "الوصف العربي",
-    englishName: "English Name",
-    englishDescription: "English Description",
-    cost: 300,
-    categoryId: 1,
-  };
-
-  console.log(myData);
+  console.log(formData);
   // console.log(selectedCategoryImgFile);
 
   //
   const sendData = () => {
-    Axios.post(`/${SERVICE}`, myData)
+    Axios.post(`/${SERVICE}`, formData)
       .then((response) => {
         console.log(response);
+        // clearing the form data
+        setFormData({
+          arabicName: "None",
+          arabicDescription: "None",
+          englishName: "",
+          englishDescription: "",
+          cost: 0,
+          minutes: 30,
+          categoryId: 1,
+        });
+        // hiding the form
+        setShowNewService(false);
+        // showing the success message
+        toast.success(response.data.message, {
+          position: "bottom-right",
+          autoClose: 3000,
+        });
       })
       .catch((error) => {
         console.log(error);
@@ -208,6 +235,7 @@ export default function ServicesList() {
 
   return (
     <div className="user-profiles">
+      <ToastContainer />
       <div className="header">
         <Topbar title="Service List" />
 
@@ -341,12 +369,22 @@ export default function ServicesList() {
                   type="text"
                   id="serviceName"
                   placeholder="Installation ....."
+                  name="englishName"
+                  value={formData.englishName}
+                  onChange={handleChange}
                 />
               </div>
 
               <div className="input-elem">
                 <label htmlFor="cost">Cost</label>
-                <input type="text" id="cost" placeholder="123 SAR" />
+                <input
+                  type="text"
+                  id="cost"
+                  placeholder="123 SAR"
+                  value={formData.cost}
+                  name="cost"
+                  onChange={handleChange}
+                />
               </div>
 
               <div className="input-elem">
@@ -354,7 +392,10 @@ export default function ServicesList() {
                 <input
                   type="text"
                   id="desperation "
-                  placeholder="Enter your email"
+                  placeholder="Enter the description"
+                  value={formData.englishDescription}
+                  name="englishDescription"
+                  onChange={handleChange}
                 />
               </div>
 
